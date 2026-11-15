@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Dots</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">Dots<sup>®</sup></a>
+  <nav><ul>
+    <li><a href="index.html#shop">shop</a></li>
+    <li><a href="index.html#studios">brands</a></li>
+    <li><a href="index.html#sell">sell</a></li>
+    <li><a href="credits.html">credits</a></li>
+  </ul></nav>
+  <a class="bag" href="checkout.html">bag (3)</a>
+</header>
+
+<main class="page">
+  <h1>checkout, <em>nearly there</em></h1>
+  <p class="intro">fill in your details, pick how you want it delivered, and check your order on the right.</p>
+
+  <form class="checkout" action="#" method="post">
+    <div class="fields">
+
+      <fieldset>
+        <legend>your details</legend>
+        <div class="row">
+          <label class="f"><span>First name</span><input type="text" name="first" autocomplete="given-name" required></label>
+          <label class="f"><span>Last name</span><input type="text" name="last" autocomplete="family-name" required></label>
+        </div>
+        <div class="row">
+          <label class="f"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="f"><span>Phone (optional)</span><input type="tel" name="phone" autocomplete="tel"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>delivery address</legend>
+        <div class="row one">
+          <label class="f"><span>Street address</span><input type="text" name="address" autocomplete="street-address" required></label>
+        </div>
+        <div class="row">
+          <label class="f"><span>City</span><input type="text" name="city" autocomplete="address-level2" required></label>
+          <label class="f"><span>Postcode</span><input type="text" name="postcode" autocomplete="postal-code" required></label>
+        </div>
+        <div class="row one">
+          <label class="f"><span>Country</span>
+            <select name="country" autocomplete="country-name" required>
+              <option value="" selected disabled>Choose a country</option>
+                <option>Indonesia</option>
+                <option>Malaysia</option>
+                <option>Singapore</option>
+                <option>Philippines</option>
+                <option>Thailand</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>delivery method</legend>
+        <label class="opt"><input type="radio" name="shipping" value="standard" checked><span><b>standard</b><small>5 to 7 days</small></span><span class="price">$5</span></label>
+        <label class="opt"><input type="radio" name="shipping" value="express"><span><b>express</b><small>2 to 3 days</small></span><span class="price">$12</span></label>
+        <label class="opt"><input type="radio" name="shipping" value="pickup"><span><b>pickup</b><small>we will email you when its ready</small></span><span class="price">free</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>extras</legend>
+        <label class="opt"><input type="checkbox" name="gift"><span><b>this is a gift</b><small>leaves the prices off</small></span></label>
+        <label class="opt"><input type="checkbox" name="wrap"><span><b>wrap it in tissue paper</b><small>plastic-free</small></span><span class="price">$3</span></label>
+        <div class="row one">
+          <label class="f"><span>note for the maker (optional)</span><textarea name="note" placeholder="anything we should know?"></textarea></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>payment</legend>
+        <label class="opt"><input type="radio" name="payment" value="card" checked><span><b>card</b></span></label>
+        <label class="opt"><input type="radio" name="payment" value="transfer"><span><b>bank transfer</b></span></label>
+        <label class="opt"><input type="radio" name="payment" value="pigeon"><span><b>by pigeon</b></span></label>
+        <!-- Do not add card number fields to a plain HTML form. Connect Stripe, PayPal or similar to take real payments. -->
+       
+      </fieldset>
+
+    </div>
+
+    <aside class="summary">
+      <div class="table-wrap">
+        <table>
+          <caption>your order</caption>
+          <thead><tr><th scope="col">item</th><th scope="col" class="n">qty</th><th scope="col" class="n">price</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span class="thumb" style="--f:#f8a9c6"><img src="images/product-01.jpg" alt=""></span>Mechanics notebook</th><td class="n"><input class="qty" type="number" name="qty1" value="1" min="1" aria-label="Quantity, Mechanics notebook"></td><td class="n">$24</td></tr>
+            <tr><th scope="row"><span class="thumb" style="--f:#69c7dc"><img src="images/product-03.jpg" alt=""></span>Ink no. 7, cyan</th><td class="n"><input class="qty" type="number" name="qty2" value="1" min="1" aria-label="Quantity, Ink no. 7, cyan"></td><td class="n">$18</td></tr>
+            <tr><th scope="row"><span class="thumb" style="--f:#f5d327"><img src="images/product-08.jpg" alt=""></span>Washi tape trio</th><td class="n"><input class="qty" type="number" name="qty3" value="1" min="1" aria-label="Quantity, Washi tape trio"></td><td class="n">$11</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th scope="row" colspan="2">subtotal</th><td class="n">$53</td></tr>
+            <tr><th scope="row" colspan="2">delivery</th><td class="n">$5</td></tr>
+            <tr><th scope="row" colspan="2">total</th><td class="n">$58</td></tr>
+          </tfoot>
+        </table>
+      </div>
+
+        <label class="opt"><input type="checkbox" name="news"><span><b>send me news of new items</b></span></label>
+        <label class="opt"><input type="checkbox" name="terms" required><span><b>i agree to the shop terms</b><small>Required</small></span></label>
+      <button class="btn place" type="submit">place order</button>
+      <p class="small">(the totals above are an example)</p>
+    </aside>
+  </form>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="#shop">shop</a></li>
+    <li><a href="#studios">studios</a></li>
+    <li><a href="#sell">sell @ Dots</a></li>
+    <li><a href="https://www.instagram.com/padmeira?">instagram</a></li>
+  </ul>
+  <p class="copy">© 2026 Dots. All artwork belongs to its creators; see the credits page.</p>
+</footer>
+
+</body>
+</html>
